@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Матчи — Football Stats</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-futbol"></i>
+                <span>FootballStats</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="matches.html" class="active">Матчи</a></li>
+                <li><a href="teams.html">Команды</a></li>
+                <li><a href="predictions.html">Прогнозы</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Вход</a>
+                <a href="register.html" class="btn btn-primary">Регистрация</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Заголовок страницы -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">
+                <i class="fas fa-calendar-alt"></i>
+                Матчи
+            </h1>
+            <p class="page-subtitle">Все матчи топ-лиг в одном месте</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <section class="section">
+        <div class="container">
+            <!-- Фильтры -->
+            <div class="filters-bar">
+                <div class="filter-group">
+                    <label for="leagueFilter">Лига</label>
+                    <select id="leagueFilter" class="filter-select">
+                        <option value="all">Все лиги</option>
+                        <option value="Premier League">Premier League</option>
+                        <option value="La Liga">La Liga</option>
+                        <option value="Serie A">Serie A</option>
+                        <option value="Bundesliga">Bundesliga</option>
+                        <option value="Ligue 1">Ligue 1</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="statusFilter">Статус</label>
+                    <select id="statusFilter" class="filter-select">
+                        <option value="all">Все</option>
+                        <option value="live">Live</option>
+                        <option value="scheduled">Запланированные</option>
+                        <option value="finished">Завершенные</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="dateFilter">Дата</label>
+                    <input type="date" id="dateFilter" class="filter-select">
+                </div>
+                <div class="filter-group" style="margin-left: auto;">
+                    <label>&nbsp;</label>
+                    <button class="btn btn-primary" style="padding: 12px 24px;">
+                        <i class="fas fa-filter"></i> Применить
+                    </button>
+                </div>
+            </div>
+
+            <!-- Сетка матчей -->
+            <div class="matches-grid">
+                <!-- Матч 1 - Live -->
+                <div class="match-card live" data-date="2026-03-24">
+                    <div class="match-header">
+                        <span class="league-name"><i class="fas fa-trophy"></i> Premier League</span>
+                        <span class="match-time">75'</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team home">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Arsenal" class="team-logo">
+                            <span class="team-name">Arsenal</span>
+                        </div>
+                        <div class="match-score">
+                            <span class="score-home">2</span>
+                            <span class="score-separator">:</span>
+                            <span class="score-away">1</span>
+                        </div>
+                        <div class="team away">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652852.png" alt="Chelsea" class="team-logo">
+                            <span class="team-name">Chelsea</span>
+                        </div>
+                    </div>
+                    <div class="match-stats-mini">
+                        <span>Владение: 58% - 42% | Удары: 12 - 8</span>
+                    </div>
+                    <a href="match-detail.html" class="btn btn-sm btn-match">Подробнее</a>
+                </div>
+
+                <!-- Матч 2 - Live -->
+                <div class="match-card live" data-date="2026-03-24">
+                    <div class="match-header">
+                        <span class="league-name"><i class="fas fa-trophy"></i> La Liga</span>
+                        <span class="match-time">32'</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team home">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652772.png" alt="Real Madrid" class="team-logo">
+                            <span class="team-name">Real Madrid</span>
+                        </div>
+                        <div class="match-score">
+                            <span class="score-home">1</span>
+                            <span class="score-separator">:</span>
+                            <span class="score-away">0</span>
+                        </div>
+                        <div class="team away">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652838.png" alt="Barcelona" class="team-logo">
+                            <span class="team-name">Barcelona</span>
+                        </div>
+                    </div>
+                    <div class="match-stats-mini">
+                        <span>Владение: 45% - 55% | Удары: 5 - 7</span>
+                    </div>
+                    <a href="match-detail.html" class="btn btn-sm btn-match">Подробнее</a>
+                </div>
+
+                <!-- Матч 3 - Live -->
+                <div class="match-card live" data-date="2026-03-24">
+                    <div class="match-header">
+                        <span class="league-name"><i class="fas fa-trophy"></i> Serie A</span>
+                        <span class="match-time">88'</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team home">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652929.png" alt="Juventus" class="team-logo">
+                            <span class="team-name">Juventus</span>
+                        </div>
+                        <div class="match-score">
+                            <span class="score-home">0</span>
+                            <span class="score-separator">:</span>
+                            <span class="score-away">0</span>
+                        </div>
+                        <div class="team away">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652859.png" alt="Milan" class="team-logo">
+                            <span class="team-name">Milan</span>
+                        </div>
+                    </div>
+                    <div class="match-stats-mini">
+                        <span>Владение: 50% - 50% | Удары: 9 - 9</span>
+                    </div>
+                    <a href="match-detail.html" class="btn btn-sm btn-match">Подробнее</a>
+                </div>
+
+                <!-- Матч 4 - Запланированный -->
+                <div class="match-card" data-date="2026-03-25">
+                    <div class="match-header">
+                        <span class="league-name"><i class="fas fa-trophy"></i> Premier League</span>
+                        <span class="match-time">20:00</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team home">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Man City" class="team-logo">
+                            <span class="team-name">Manchester City</span>
+                        </div>
+                        <div class="match-score">
+                            <span class="score-home">-</span>
+                            <span class="score-separator">:</span>
+                            <span class="score-away">-</span>
+                        </div>
+                        <div class="team away">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652852.png" alt="Liverpool" class="team-logo">
+                            <span class="team-name">Liverpool</span>
+                        </div>
+                    </div>
+                    <div class="match-stats-mini">
+                        <span>Этихад Стэдиум | Судья: Майкл Оливер</span>
+                    </div>
+                    <a href="match-detail.html" class="btn btn-sm btn-match">Прогноз</a>
+                </div>
+
+                <!-- Матч 5 - Запланированный -->
+                <div class="match-card" data-date="2026-03-26">
+                    <div class="match-header">
+                        <span class="league-name"><i class="fas fa-trophy"></i> Bundesliga</span>
+                        <span class="match-time">18:30</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team home">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652772.png" alt="Bayern" class="team-logo">
+                            <span class="team-name">Bayern Munich</span>
+                        </div>
+                        <div class="match-score">
+                            <span class="score-home">-</span>
+                            <span class="score-separator">:</span>
+                            <span class="score-away">-</span>
+                        </div>
+                        <div class="team away">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652929.png" alt="Dortmund" class="team-logo">
+                            <span class="team-name">Borussia Dortmund</span>
+                        </div>
+                    </div>
+                    <div class="match-stats-mini">
+                        <span>Альянц Арена | Судья: Феликс Брых</span>
+                    </div>
+                    <a href="match-detail.html" class="btn btn-sm btn-match">Прогноз</a>
+                </div>
+
+                <!-- Матч 6 - Завершенный -->
+                <div class="match-card" data-date="2026-03-23">
+                    <div class="match-header">
+                        <span class="league-name"><i class="fas fa-trophy"></i> Ligue 1</span>
+                        <span class="match-time" style="color: var(--text-muted);">FT</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team home">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652838.png" alt="PSG" class="team-logo">
+                            <span class="team-name">PSG</span>
+                        </div>
+                        <div class="match-score">
+                            <span class="score-home">3</span>
+                            <span class="score-separator">:</span>
+                            <span class="score-away">1</span>
+                        </div>
+                        <div class="team away">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Marseille" class="team-logo">
+                            <span class="team-name">Marseille</span>
+                        </div>
+                    </div>
+                    <div class="match-stats-mini">
+                        <span>Владение: 62% - 38% | Удары: 18 - 6</span>
+                    </div>
+                    <a href="match-detail.html" class="btn btn-sm btn-match">Обзор</a>
+                </div>
+            </div>
+
+            <!-- Пагинация -->
+            <div class="pagination" style="display: flex; justify-content: center; gap: 10px; margin-top: 40px;">
+                <button class="btn btn-outline" style="padding: 10px 20px;">
+                    <i class="fas fa-chevron-left"></i> Назад
+                </button>
+                <button class="btn btn-primary" style="padding: 10px 20px;">1</button>
+                <button class="btn btn-outline" style="padding: 10px 20px;">2</button>
+                <button class="btn btn-outline" style="padding: 10px 20px;">3</button>
+                <button class="btn btn-outline" style="padding: 10px 20px;">
+                    Вперед <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-futbol"></i> FootballStats</h3>
+                    <p>Современная платформа для анализа футбольной статистики с использованием искусственного интеллекта</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="matches.html">Матчи</a></li>
+                        <li><a href="teams.html">Команды</a></li>
+                        <li><a href="predictions.html">Прогнозы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Лиги</h4>
+                    <ul>
+                        <li><a href="#">Premier League</a></li>
+                        <li><a href="#">La Liga</a></li>
+                        <li><a href="#">Serie A</a></li>
+                        <li><a href="#">Bundesliga</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@footballstats.com</li>
+                        <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FootballStats. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

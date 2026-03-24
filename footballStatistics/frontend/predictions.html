@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогнозы — Football Stats</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-futbol"></i>
+                <span>FootballStats</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="matches.html">Матчи</a></li>
+                <li><a href="teams.html">Команды</a></li>
+                <li><a href="predictions.html" class="active">Прогнозы</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Вход</a>
+                <a href="register.html" class="btn btn-primary">Регистрация</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Заголовок страницы -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">
+                <i class="fas fa-brain"></i>
+                AI Прогнозы
+            </h1>
+            <p class="page-subtitle">Точные прогнозы на основе машинного обучения</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <section class="section">
+        <div class="container">
+            <!-- Статистика прогнозов -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px;">
+                <div class="stat-box" style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary-color);">85%</div>
+                    <div style="color: var(--text-secondary);">Общая точность</div>
+                </div>
+                <div class="stat-box" style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--secondary-color);">156</div>
+                    <div style="color: var(--text-secondary);">Прогнозов сделано</div>
+                </div>
+                <div class="stat-box" style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--warning-color);">132</div>
+                    <div style="color: var(--text-secondary);">Точных прогнозов</div>
+                </div>
+                <div class="stat-box" style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: #ec4899;">24</div>
+                    <div style="color: var(--text-secondary);">Ошибок</div>
+                </div>
+            </div>
+
+            <!-- Фильтры -->
+            <div class="filters-bar">
+                <div class="filter-group">
+                    <label for="leagueFilter">Лига</label>
+                    <select id="leagueFilter" class="filter-select">
+                        <option value="all">Все лиги</option>
+                        <option value="Premier League">Premier League</option>
+                        <option value="La Liga">La Liga</option>
+                        <option value="Serie A">Serie A</option>
+                        <option value="Bundesliga">Bundesliga</option>
+                        <option value="Ligue 1">Ligue 1</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="accuracyFilter">Точность</label>
+                    <select id="accuracyFilter" class="filter-select">
+                        <option value="all">Все</option>
+                        <option value="high">Высокая (80%+)</option>
+                        <option value="medium">Средняя (60-80%)</option>
+                        <option value="low">Низкая (<60%)</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="dateFilter">Дата</label>
+                    <input type="date" id="dateFilter" class="filter-select">
+                </div>
+            </div>
+
+            <!-- Сетка прогнозов -->
+            <div class="predictions-grid">
+                <!-- Прогноз 1 -->
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <span class="prediction-date"><i class="fas fa-calendar"></i> 25 Марта, 20:00</span>
+                        <span class="prediction-accuracy high"><i class="fas fa-check-circle"></i> 85% точность</span>
+                    </div>
+                    <div class="prediction-teams">
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Man City" class="team-logo-sm">
+                            <span>Manchester City</span>
+                        </div>
+                        <span class="vs">vs</span>
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652852.png" alt="Liverpool" class="team-logo-sm">
+                            <span>Liverpool</span>
+                        </div>
+                    </div>
+                    <div class="prediction-bars">
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 1</span>
+                                <span>45%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Ничья</span>
+                                <span>28%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill draw" style="width: 28%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 2</span>
+                                <span>27%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill away" style="width: 27%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prediction-footer">
+                        <span class="predicted-score"><i class="fas fa-futbol"></i> Прогноз: 2:1</span>
+                        <a href="match-detail.html" class="btn btn-sm btn-primary">Детали</a>
+                    </div>
+                </div>
+
+                <!-- Прогноз 2 -->
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <span class="prediction-date"><i class="fas fa-calendar"></i> 26 Марта, 18:30</span>
+                        <span class="prediction-accuracy medium"><i class="fas fa-check-circle"></i> 72% точность</span>
+                    </div>
+                    <div class="prediction-teams">
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652772.png" alt="Bayern" class="team-logo-sm">
+                            <span>Bayern Munich</span>
+                        </div>
+                        <span class="vs">vs</span>
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652929.png" alt="Dortmund" class="team-logo-sm">
+                            <span>Borussia Dortmund</span>
+                        </div>
+                    </div>
+                    <div class="prediction-bars">
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 1</span>
+                                <span>62%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill" style="width: 62%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Ничья</span>
+                                <span>22%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill draw" style="width: 22%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 2</span>
+                                <span>16%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill away" style="width: 16%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prediction-footer">
+                        <span class="predicted-score"><i class="fas fa-futbol"></i> Прогноз: 3:1</span>
+                        <a href="match-detail.html" class="btn btn-sm btn-primary">Детали</a>
+                    </div>
+                </div>
+
+                <!-- Прогноз 3 -->
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <span class="prediction-date"><i class="fas fa-calendar"></i> 27 Марта, 21:00</span>
+                        <span class="prediction-accuracy high"><i class="fas fa-check-circle"></i> 90% точность</span>
+                    </div>
+                    <div class="prediction-teams">
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652838.png" alt="PSG" class="team-logo-sm">
+                            <span>PSG</span>
+                        </div>
+                        <span class="vs">vs</span>
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Marseille" class="team-logo-sm">
+                            <span>Marseille</span>
+                        </div>
+                    </div>
+                    <div class="prediction-bars">
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 1</span>
+                                <span>71%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill" style="width: 71%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Ничья</span>
+                                <span>18%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill draw" style="width: 18%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 2</span>
+                                <span>11%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill away" style="width: 11%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prediction-footer">
+                        <span class="predicted-score"><i class="fas fa-futbol"></i> Прогноз: 2:0</span>
+                        <a href="match-detail.html" class="btn btn-sm btn-primary">Детали</a>
+                    </div>
+                </div>
+
+                <!-- Прогноз 4 -->
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <span class="prediction-date"><i class="fas fa-calendar"></i> 28 Марта, 17:00</span>
+                        <span class="prediction-accuracy high"><i class="fas fa-check-circle"></i> 82% точность</span>
+                    </div>
+                    <div class="prediction-teams">
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Arsenal" class="team-logo-sm">
+                            <span>Arsenal</span>
+                        </div>
+                        <span class="vs">vs</span>
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652852.png" alt="Chelsea" class="team-logo-sm">
+                            <span>Chelsea</span>
+                        </div>
+                    </div>
+                    <div class="prediction-bars">
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 1</span>
+                                <span>52%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill" style="width: 52%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Ничья</span>
+                                <span>26%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill draw" style="width: 26%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 2</span>
+                                <span>22%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill away" style="width: 22%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prediction-footer">
+                        <span class="predicted-score"><i class="fas fa-futbol"></i> Прогноз: 2:1</span>
+                        <a href="match-detail.html" class="btn btn-sm btn-primary">Детали</a>
+                    </div>
+                </div>
+
+                <!-- Прогноз 5 -->
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <span class="prediction-date"><i class="fas fa-calendar"></i> 29 Марта, 20:00</span>
+                        <span class="prediction-accuracy medium"><i class="fas fa-check-circle"></i> 68% точность</span>
+                    </div>
+                    <div class="prediction-teams">
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652772.png" alt="Real Madrid" class="team-logo-sm">
+                            <span>Real Madrid</span>
+                        </div>
+                        <span class="vs">vs</span>
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652838.png" alt="Atletico" class="team-logo-sm">
+                            <span>Atletico Madrid</span>
+                        </div>
+                    </div>
+                    <div class="prediction-bars">
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 1</span>
+                                <span>48%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill" style="width: 48%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Ничья</span>
+                                <span>30%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill draw" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 2</span>
+                                <span>22%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill away" style="width: 22%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prediction-footer">
+                        <span class="predicted-score"><i class="fas fa-futbol"></i> Прогноз: 1:1</span>
+                        <a href="match-detail.html" class="btn btn-sm btn-primary">Детали</a>
+                    </div>
+                </div>
+
+                <!-- Прогноз 6 -->
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <span class="prediction-date"><i class="fas fa-calendar"></i> 30 Марта, 19:45</span>
+                        <span class="prediction-accuracy high"><i class="fas fa-check-circle"></i> 88% точность</span>
+                    </div>
+                    <div class="prediction-teams">
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652929.png" alt="Inter" class="team-logo-sm">
+                            <span>Inter Milan</span>
+                        </div>
+                        <span class="vs">vs</span>
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652859.png" alt="Napoli" class="team-logo-sm">
+                            <span>Napoli</span>
+                        </div>
+                    </div>
+                    <div class="prediction-bars">
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 1</span>
+                                <span>55%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill" style="width: 55%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Ничья</span>
+                                <span>25%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill draw" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 2</span>
+                                <span>20%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill away" style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prediction-footer">
+                        <span class="predicted-score"><i class="fas fa-futbol"></i> Прогноз: 2:0</span>
+                        <a href="match-detail.html" class="btn btn-sm btn-primary">Детали</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Пагинация -->
+            <div class="pagination" style="display: flex; justify-content: center; gap: 10px; margin-top: 40px;">
+                <button class="btn btn-outline" style="padding: 10px 20px;">
+                    <i class="fas fa-chevron-left"></i> Назад
+                </button>
+                <button class="btn btn-primary" style="padding: 10px 20px;">1</button>
+                <button class="btn btn-outline" style="padding: 10px 20px;">2</button>
+                <button class="btn btn-outline" style="padding: 10px 20px;">3</button>
+                <button class="btn btn-outline" style="padding: 10px 20px;">
+                    Вперед <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-futbol"></i> FootballStats</h3>
+                    <p>Современная платформа для анализа футбольной статистики с использованием искусственного интеллекта</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="matches.html">Матчи</a></li>
+                        <li><a href="teams.html">Команды</a></li>
+                        <li><a href="predictions.html">Прогнозы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Лиги</h4>
+                    <ul>
+                        <li><a href="#">Premier League</a></li>
+                        <li><a href="#">La Liga</a></li>
+                        <li><a href="#">Serie A</a></li>
+                        <li><a href="#">Bundesliga</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@footballstats.com</li>
+                        <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FootballStats. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
