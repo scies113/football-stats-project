@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Stats — Статистика футбольных матчей</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-futbol"></i>
+                <span>FootballStats</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="matches.html">Матчи</a></li>
+                <li><a href="teams.html">Команды</a></li>
+                <li><a href="predictions.html">Прогнозы</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Вход</a>
+                <a href="register.html" class="btn btn-primary">Регистрация</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Герой-секция -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Футбольная статистика
+                    <span>с AI-прогнозами</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Анализируйте матчи, отслеживайте статистику команд и получайте точные прогнозы на основе машинного обучения
+                </p>
+                <div class="hero-buttons">
+                    <a href="matches.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-calendar-alt"></i> Смотреть матчи
+                    </a>
+                    <a href="teams.html" class="btn btn-outline btn-lg">
+                        <i class="fas fa-shield-alt"></i> Команды
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Матчей</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Команд</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">60%+</span>
+                        <span class="stat-label">Точность</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card card-1">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Аналитика</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Прогноз</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-trophy"></i>
+                    <span>Лиги</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция с/live матчами -->
+    <section class="live-matches section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-circle live-indicator"></i>
+                    Live Матчи
+                </h2>
+                <a href="matches.html" class="view-all">
+                    Все матчи <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="matches-grid">
+                <!-- Матч 1 -->
+                <div class="match-card live">
+                    <div class="match-header">
+                        <span class="league-name">Premier League</span>
+                        <span class="match-time">75'</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team home">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Team" class="team-logo">
+                            <span class="team-name">Arsenal</span>
+                        </div>
+                        <div class="match-score">
+                            <span class="score-home">2</span>
+                            <span class="score-separator">:</span>
+                            <span class="score-away">1</span>
+                        </div>
+                        <div class="team away">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652852.png" alt="Team" class="team-logo">
+                            <span class="team-name">Chelsea</span>
+                        </div>
+                    </div>
+                    <div class="match-stats-mini">
+                        <span>Владение: 58% - 42%</span>
+                    </div>
+                    <a href="match-detail.html" class="btn btn-sm btn-match">Подробнее</a>
+                </div>
+
+                <!-- Матч 2 -->
+                <div class="match-card live">
+                    <div class="match-header">
+                        <span class="league-name">La Liga</span>
+                        <span class="match-time">32'</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team home">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652772.png" alt="Team" class="team-logo">
+                            <span class="team-name">Real Madrid</span>
+                        </div>
+                        <div class="match-score">
+                            <span class="score-home">1</span>
+                            <span class="score-separator">:</span>
+                            <span class="score-away">0</span>
+                        </div>
+                        <div class="team away">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652838.png" alt="Team" class="team-logo">
+                            <span class="team-name">Barcelona</span>
+                        </div>
+                    </div>
+                    <div class="match-stats-mini">
+                        <span>Владение: 45% - 55%</span>
+                    </div>
+                    <a href="match-detail.html" class="btn btn-sm btn-match">Подробнее</a>
+                </div>
+
+                <!-- Матч 3 -->
+                <div class="match-card live">
+                    <div class="match-header">
+                        <span class="league-name">Serie A</span>
+                        <span class="match-time">88'</span>
+                    </div>
+                    <div class="match-teams">
+                        <div class="team home">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652929.png" alt="Team" class="team-logo">
+                            <span class="team-name">Juventus</span>
+                        </div>
+                        <div class="match-score">
+                            <span class="score-home">0</span>
+                            <span class="score-separator">:</span>
+                            <span class="score-away">0</span>
+                        </div>
+                        <div class="team away">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652859.png" alt="Team" class="team-logo">
+                            <span class="team-name">Milan</span>
+                        </div>
+                    </div>
+                    <div class="match-stats-mini">
+                        <span>Владение: 50% - 50%</span>
+                    </div>
+                    <a href="match-detail.html" class="btn btn-sm btn-match">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция прогнозов -->
+    <section class="predictions section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-brain"></i>
+                    AI Прогнозы
+                </h2>
+                <a href="predictions.html" class="view-all">
+                    Все прогнозы <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="predictions-grid">
+                <!-- Прогноз 1 -->
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <span class="prediction-date">25 Марта, 20:00</span>
+                        <span class="prediction-accuracy high">85% точность</span>
+                    </div>
+                    <div class="prediction-teams">
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Team" class="team-logo-sm">
+                            <span>Manchester City</span>
+                        </div>
+                        <span class="vs">vs</span>
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652852.png" alt="Team" class="team-logo-sm">
+                            <span>Liverpool</span>
+                        </div>
+                    </div>
+                    <div class="prediction-bars">
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 1</span>
+                                <span>45%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Ничья</span>
+                                <span>28%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill draw" style="width: 28%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 2</span>
+                                <span>27%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill away" style="width: 27%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prediction-footer">
+                        <span class="predicted-score">Прогноз счета: 2:1</span>
+                        <a href="match-detail.html" class="btn btn-sm btn-primary">Детали</a>
+                    </div>
+                </div>
+
+                <!-- Прогноз 2 -->
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <span class="prediction-date">26 Марта, 18:30</span>
+                        <span class="prediction-accuracy medium">72% точность</span>
+                    </div>
+                    <div class="prediction-teams">
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652772.png" alt="Team" class="team-logo-sm">
+                            <span>Bayern Munich</span>
+                        </div>
+                        <span class="vs">vs</span>
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652929.png" alt="Team" class="team-logo-sm">
+                            <span>Dortmund</span>
+                        </div>
+                    </div>
+                    <div class="prediction-bars">
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 1</span>
+                                <span>62%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill" style="width: 62%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Ничья</span>
+                                <span>22%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill draw" style="width: 22%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 2</span>
+                                <span>16%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill away" style="width: 16%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prediction-footer">
+                        <span class="predicted-score">Прогноз счета: 3:1</span>
+                        <a href="match-detail.html" class="btn btn-sm btn-primary">Детали</a>
+                    </div>
+                </div>
+
+                <!-- Прогноз 3 -->
+                <div class="prediction-card">
+                    <div class="prediction-header">
+                        <span class="prediction-date">27 Марта, 21:00</span>
+                        <span class="prediction-accuracy high">90% точность</span>
+                    </div>
+                    <div class="prediction-teams">
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652838.png" alt="Team" class="team-logo-sm">
+                            <span>PSG</span>
+                        </div>
+                        <span class="vs">vs</span>
+                        <div class="team-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Team" class="team-logo-sm">
+                            <span>Marseille</span>
+                        </div>
+                    </div>
+                    <div class="prediction-bars">
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 1</span>
+                                <span>71%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill" style="width: 71%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Ничья</span>
+                                <span>18%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill draw" style="width: 18%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа 2</span>
+                                <span>11%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill away" style="width: 11%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prediction-footer">
+                        <span class="predicted-score">Прогноз счета: 2:0</span>
+                        <a href="match-detail.html" class="btn btn-sm btn-primary">Детали</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция топ команд -->
+    <section class="top-teams section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-trophy"></i>
+                    Топ Команд
+                </h2>
+                <a href="teams.html" class="view-all">
+                    Все команды <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="teams-table-wrapper">
+                <table class="teams-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Команда</th>
+                            <th>И</th>
+                            <th>В</th>
+                            <th>Н</th>
+                            <th>П</th>
+                            <th>Очки</th>
+                            <th>Форма</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="team-cell">
+                                <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Team" class="team-logo-sm">
+                                <span>Manchester City</span>
+                            </td>
+                            <td>28</td>
+                            <td>22</td>
+                            <td>4</td>
+                            <td>2</td>
+                            <td class="points">70</td>
+                            <td class="form">
+                                <span class="form-badge win">W</span>
+                                <span class="form-badge win">W</span>
+                                <span class="form-badge draw">D</span>
+                                <span class="form-badge win">W</span>
+                                <span class="form-badge win">W</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="team-cell">
+                                <img src="https://cdn-icons-png.flaticon.com/512/8652/8652852.png" alt="Team" class="team-logo-sm">
+                                <span>Liverpool</span>
+                            </td>
+                            <td>28</td>
+                            <td>20</td>
+                            <td>6</td>
+                            <td>2</td>
+                            <td class="points">66</td>
+                            <td class="form">
+                                <span class="form-badge win">W</span>
+                                <span class="form-badge draw">D</span>
+                                <span class="form-badge win">W</span>
+                                <span class="form-badge win">W</span>
+                                <span class="form-badge draw">D</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="team-cell">
+                                <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Team" class="team-logo-sm">
+                                <span>Arsenal</span>
+                            </td>
+                            <td>28</td>
+                            <td>19</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td class="points">62</td>
+                            <td class="form">
+                                <span class="form-badge win">W</span>
+                                <span class="form-badge loss">L</span>
+                                <span class="form-badge win">W</span>
+                                <span class="form-badge win">W</span>
+                                <span class="form-badge win">W</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="team-cell">
+                                <img src="https://cdn-icons-png.flaticon.com/512/8652/8652852.png" alt="Team" class="team-logo-sm">
+                                <span>Chelsea</span>
+                            </td>
+                            <td>28</td>
+                            <td>17</td>
+                            <td>7</td>
+                            <td>4</td>
+                            <td class="points">58</td>
+                            <td class="form">
+                                <span class="form-badge draw">D</span>
+                                <span class="form-badge win">W</span>
+                                <span class="form-badge loss">L</span>
+                                <span class="form-badge win">W</span>
+                                <span class="form-badge draw">D</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td class="team-cell">
+                                <img src="https://cdn-icons-png.flaticon.com/512/8652/8652852.png" alt="Team" class="team-logo-sm">
+                                <span>Manchester United</span>
+                            </td>
+                            <td>28</td>
+                            <td>15</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td class="points">51</td>
+                            <td class="form">
+                                <span class="form-badge win">W</span>
+                                <span class="form-badge loss">L</span>
+                                <span class="form-badge draw">D</span>
+                                <span class="form-badge win">W</span>
+                                <span class="form-badge loss">L</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FootballStats</h3>
+                    <p>Современная платформа для анализа футбольной статистики с использованием искусственного интеллекта</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="matches.html">Матчи</a></li>
+                        <li><a href="teams.html">Команды</a></li>
+                        <li><a href="predictions.html">Прогнозы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Лиги</h4>
+                    <ul>
+                        <li><a href="#">Premier League</a></li>
+                        <li><a href="#">La Liga</a></li>
+                        <li><a href="#">Serie A</a></li>
+                        <li><a href="#">Bundesliga</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@footballstats.com</li>
+                        <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FootballStats. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

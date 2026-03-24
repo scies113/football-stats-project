@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команды — Football Stats</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-futbol"></i>
+                <span>FootballStats</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="matches.html">Матчи</a></li>
+                <li><a href="teams.html" class="active">Команды</a></li>
+                <li><a href="predictions.html">Прогнозы</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Вход</a>
+                <a href="register.html" class="btn btn-primary">Регистрация</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Заголовок страницы -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">
+                <i class="fas fa-shield-alt"></i>
+                Команды
+            </h1>
+            <p class="page-subtitle">Все команды топ-лиг Европы</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <section class="section">
+        <div class="container">
+            <!-- Поиск и фильтры -->
+            <div class="filters-bar">
+                <div class="filter-group" style="flex: 1; max-width: 300px;">
+                    <label for="teamSearch">Поиск команды</label>
+                    <input type="text" id="teamSearch" class="filter-select" placeholder="Название команды...">
+                </div>
+                <div class="filter-group">
+                    <label for="leagueFilter">Лига</label>
+                    <select id="leagueFilter" class="filter-select">
+                        <option value="all">Все лиги</option>
+                        <option value="Premier League">Premier League</option>
+                        <option value="La Liga">La Liga</option>
+                        <option value="Serie A">Serie A</option>
+                        <option value="Bundesliga">Bundesliga</option>
+                        <option value="Ligue 1">Ligue 1</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sortFilter">Сортировка</label>
+                    <select id="sortFilter" class="filter-select">
+                        <option value="name">По названию</option>
+                        <option value="points">По очкам</option>
+                        <option value="goals">По голам</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Сетка команд -->
+            <div class="teams-grid">
+                <!-- Команда 1 -->
+                <div class="team-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Manchester City" class="team-card-logo">
+                    <h3 class="team-card-name">Manchester City</h3>
+                    <p class="team-card-league"><i class="fas fa-trophy"></i> Premier League</p>
+                    <div class="team-card-stats">
+                        <div class="team-stat">
+                            <span class="team-stat-value">28</span>
+                            <span class="team-stat-label">Игры</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">22</span>
+                            <span class="team-stat-label">Победы</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">70</span>
+                            <span class="team-stat-label">Очки</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-match" style="margin-top: 20px;">
+                        <i class="fas fa-chart-bar"></i> Статистика
+                    </a>
+                </div>
+
+                <!-- Команда 2 -->
+                <div class="team-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8652/8652852.png" alt="Liverpool" class="team-card-logo">
+                    <h3 class="team-card-name">Liverpool</h3>
+                    <p class="team-card-league"><i class="fas fa-trophy"></i> Premier League</p>
+                    <div class="team-card-stats">
+                        <div class="team-stat">
+                            <span class="team-stat-value">28</span>
+                            <span class="team-stat-label">Игры</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">20</span>
+                            <span class="team-stat-label">Победы</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">66</span>
+                            <span class="team-stat-label">Очки</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-match" style="margin-top: 20px;">
+                        <i class="fas fa-chart-bar"></i> Статистика
+                    </a>
+                </div>
+
+                <!-- Команда 3 -->
+                <div class="team-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Arsenal" class="team-card-logo">
+                    <h3 class="team-card-name">Arsenal</h3>
+                    <p class="team-card-league"><i class="fas fa-trophy"></i> Premier League</p>
+                    <div class="team-card-stats">
+                        <div class="team-stat">
+                            <span class="team-stat-value">28</span>
+                            <span class="team-stat-label">Игры</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">19</span>
+                            <span class="team-stat-label">Победы</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">62</span>
+                            <span class="team-stat-label">Очки</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-match" style="margin-top: 20px;">
+                        <i class="fas fa-chart-bar"></i> Статистика
+                    </a>
+                </div>
+
+                <!-- Команда 4 -->
+                <div class="team-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8652/8652852.png" alt="Chelsea" class="team-card-logo">
+                    <h3 class="team-card-name">Chelsea</h3>
+                    <p class="team-card-league"><i class="fas fa-trophy"></i> Premier League</p>
+                    <div class="team-card-stats">
+                        <div class="team-stat">
+                            <span class="team-stat-value">28</span>
+                            <span class="team-stat-label">Игры</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">17</span>
+                            <span class="team-stat-label">Победы</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">58</span>
+                            <span class="team-stat-label">Очки</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-match" style="margin-top: 20px;">
+                        <i class="fas fa-chart-bar"></i> Статистика
+                    </a>
+                </div>
+
+                <!-- Команда 5 -->
+                <div class="team-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8652/8652772.png" alt="Real Madrid" class="team-card-logo">
+                    <h3 class="team-card-name">Real Madrid</h3>
+                    <p class="team-card-league"><i class="fas fa-trophy"></i> La Liga</p>
+                    <div class="team-card-stats">
+                        <div class="team-stat">
+                            <span class="team-stat-value">27</span>
+                            <span class="team-stat-label">Игры</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">20</span>
+                            <span class="team-stat-label">Победы</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">64</span>
+                            <span class="team-stat-label">Очки</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-match" style="margin-top: 20px;">
+                        <i class="fas fa-chart-bar"></i> Статистика
+                    </a>
+                </div>
+
+                <!-- Команда 6 -->
+                <div class="team-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8652/8652838.png" alt="Barcelona" class="team-card-logo">
+                    <h3 class="team-card-name">Barcelona</h3>
+                    <p class="team-card-league"><i class="fas fa-trophy"></i> La Liga</p>
+                    <div class="team-card-stats">
+                        <div class="team-stat">
+                            <span class="team-stat-value">27</span>
+                            <span class="team-stat-label">Игры</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">18</span>
+                            <span class="team-stat-label">Победы</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">57</span>
+                            <span class="team-stat-label">Очки</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-match" style="margin-top: 20px;">
+                        <i class="fas fa-chart-bar"></i> Статистика
+                    </a>
+                </div>
+
+                <!-- Команда 7 -->
+                <div class="team-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8652/8652772.png" alt="Bayern Munich" class="team-card-logo">
+                    <h3 class="team-card-name">Bayern Munich</h3>
+                    <p class="team-card-league"><i class="fas fa-trophy"></i> Bundesliga</p>
+                    <div class="team-card-stats">
+                        <div class="team-stat">
+                            <span class="team-stat-value">25</span>
+                            <span class="team-stat-label">Игры</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">19</span>
+                            <span class="team-stat-label">Победы</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">60</span>
+                            <span class="team-stat-label">Очки</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-match" style="margin-top: 20px;">
+                        <i class="fas fa-chart-bar"></i> Статистика
+                    </a>
+                </div>
+
+                <!-- Команда 8 -->
+                <div class="team-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8652/8652929.png" alt="Juventus" class="team-card-logo">
+                    <h3 class="team-card-name">Juventus</h3>
+                    <p class="team-card-league"><i class="fas fa-trophy"></i> Serie A</p>
+                    <div class="team-card-stats">
+                        <div class="team-stat">
+                            <span class="team-stat-value">28</span>
+                            <span class="team-stat-label">Игры</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">17</span>
+                            <span class="team-stat-label">Победы</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">55</span>
+                            <span class="team-stat-label">Очки</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-match" style="margin-top: 20px;">
+                        <i class="fas fa-chart-bar"></i> Статистика
+                    </a>
+                </div>
+
+                <!-- Команда 9 -->
+                <div class="team-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8652/8652838.png" alt="PSG" class="team-card-logo">
+                    <h3 class="team-card-name">Paris Saint-Germain</h3>
+                    <p class="team-card-league"><i class="fas fa-trophy"></i> Ligue 1</p>
+                    <div class="team-card-stats">
+                        <div class="team-stat">
+                            <span class="team-stat-value">26</span>
+                            <span class="team-stat-label">Игры</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">20</span>
+                            <span class="team-stat-label">Победы</span>
+                        </div>
+                        <div class="team-stat">
+                            <span class="team-stat-value">63</span>
+                            <span class="team-stat-label">Очки</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-match" style="margin-top: 20px;">
+                        <i class="fas fa-chart-bar"></i> Статистика
+                    </a>
+                </div>
+            </div>
+
+            <!-- Пагинация -->
+            <div class="pagination" style="display: flex; justify-content: center; gap: 10px; margin-top: 40px;">
+                <button class="btn btn-outline" style="padding: 10px 20px;">
+                    <i class="fas fa-chevron-left"></i> Назад
+                </button>
+                <button class="btn btn-primary" style="padding: 10px 20px;">1</button>
+                <button class="btn btn-outline" style="padding: 10px 20px;">2</button>
+                <button class="btn btn-outline" style="padding: 10px 20px;">3</button>
+                <button class="btn btn-outline" style="padding: 10px 20px;">
+                    Вперед <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-futbol"></i> FootballStats</h3>
+                    <p>Современная платформа для анализа футбольной статистики с использованием искусственного интеллекта</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="matches.html">Матчи</a></li>
+                        <li><a href="teams.html">Команды</a></li>
+                        <li><a href="predictions.html">Прогнозы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Лиги</h4>
+                    <ul>
+                        <li><a href="#">Premier League</a></li>
+                        <li><a href="#">La Liga</a></li>
+                        <li><a href="#">Serie A</a></li>
+                        <li><a href="#">Bundesliga</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@footballstats.com</li>
+                        <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FootballStats. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

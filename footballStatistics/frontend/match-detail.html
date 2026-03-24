@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Манчестер Сити — Ливерпуль — Football Stats</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-futbol"></i>
+                <span>FootballStats</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="matches.html" class="active">Матчи</a></li>
+                <li><a href="teams.html">Команды</a></li>
+                <li><a href="predictions.html">Прогнозы</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Вход</a>
+                <a href="register.html" class="btn btn-primary">Регистрация</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Заголовок матча -->
+    <header class="match-detail-header">
+        <div class="container">
+            <div class="match-detail-card">
+                <div class="match-detail-teams">
+                    <div class="team home">
+                        <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Manchester City" class="team-logo">
+                        <span class="team-name">Manchester City</span>
+                    </div>
+                    <div class="match-detail-score">
+                        <span class="score-home">-</span>
+                        <span class="score-separator">:</span>
+                        <span class="score-away">-</span>
+                    </div>
+                    <div class="team away">
+                        <img src="https://cdn-icons-png.flaticon.com/512/8652/8652852.png" alt="Liverpool" class="team-logo">
+                        <span class="team-name">Liverpool</span>
+                    </div>
+                </div>
+                
+                <div class="match-info-bar">
+                    <div class="match-info-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>25 Марта 2026, 20:00</span>
+                    </div>
+                    <div class="match-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Этихад Стэдиум</span>
+                    </div>
+                    <div class="match-info-item">
+                        <i class="fas fa-whistle"></i>
+                        <span>Майкл Оливер</span>
+                    </div>
+                    <div class="match-info-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Premier League</span>
+                    </div>
+                </div>
+
+                <a href="#" class="btn btn-primary btn-full" style="max-width: 400px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <i class="fas fa-robot"></i>
+                    Получить AI прогноз
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <section class="section">
+        <div class="container">
+            <!-- Табы -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="prediction">
+                    <i class="fas fa-brain"></i> Прогноз
+                </button>
+                <button class="tab-btn" data-tab="stats">
+                    <i class="fas fa-chart-bar"></i> Статистика
+                </button>
+                <button class="tab-btn" data-tab="h2h">
+                    <i class="fas fa-history"></i> Личные встречи
+                </button>
+                <button class="tab-btn" data-tab="form">
+                    <i class="fas fa-line-chart"></i> Форма
+                </button>
+            </div>
+
+            <!-- Контент табов -->
+            <div id="prediction" class="tab-content active">
+                <div class="prediction-section">
+                    <h2 class="prediction-section-title">
+                        <i class="fas fa-brain"></i>
+                        AI Прогноз на матч
+                    </h2>
+                    
+                    <div class="prediction-main">
+                        <div class="prediction-item">
+                            <div class="prediction-item-label">Победа Manchester City</div>
+                            <div class="prediction-item-value">45%</div>
+                            <div class="prediction-item-sub">Коэффициент: 2.22</div>
+                        </div>
+                        <div class="prediction-item">
+                            <div class="prediction-item-label">Ничья</div>
+                            <div class="prediction-item-value">28%</div>
+                            <div class="prediction-item-sub">Коэффициент: 3.57</div>
+                        </div>
+                        <div class="prediction-item">
+                            <div class="prediction-item-label">Победа Liverpool</div>
+                            <div class="prediction-item-value">27%</div>
+                            <div class="prediction-item-sub">Коэффициент: 3.70</div>
+                        </div>
+                    </div>
+
+                    <div class="prediction-bars" style="background: var(--bg-dark); padding: 30px; border-radius: var(--radius);">
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа Manchester City</span>
+                                <span style="color: var(--primary-color); font-weight: 700;">45%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Ничья</span>
+                                <span style="color: var(--secondary-color); font-weight: 700;">28%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill draw" style="width: 28%"></div>
+                            </div>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-label">
+                                <span>Победа Liverpool</span>
+                                <span style="color: #ec4899; font-weight: 700;">27%</span>
+                            </div>
+                            <div class="prob-track">
+                                <div class="prob-fill away" style="width: 27%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 30px;">
+                        <div class="stat-box">
+                            <div class="stat-box-header">
+                                <span class="stat-box-title">Прогнозируемый счет</span>
+                            </div>
+                            <div style="font-size: 3rem; font-weight: 800; text-align: center; color: var(--primary-color);">
+                                2:1
+                            </div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-box-header">
+                                <span class="stat-box-title">Точность модели</span>
+                            </div>
+                            <div style="font-size: 3rem; font-weight: 800; text-align: center; color: var(--success-color);">
+                                85%
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--primary-color); border-radius: var(--radius);">
+                        <h4 style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                            <i class="fas fa-lightbulb" style="color: var(--warning-color);"></i>
+                            Рекомендация AI
+                        </h4>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            Manchester City имеет преимущество домашнего поля и отличную форму в последних 5 матчах. 
+                            Ожидается результативная игра с тоталом больше 2.5 голов. Liverpool может забить, 
+                            но City выглядит фаворитом благодаря мощной атаке под руководством Хааланда.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="stats" class="tab-content">
+                <div class="prediction-section">
+                    <h2 class="prediction-section-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Статистика команд
+                    </h2>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-box-header">
+                                <span class="stat-box-title">Среднее владение мячом</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="color: var(--primary-color); font-weight: 700;">62%</span>
+                                <span style="color: var(--secondary-color); font-weight: 700;">58%</span>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-bar-home" style="width: 62%"></div>
+                                <div class="stat-bar-away" style="width: 38%"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-box">
+                            <div class="stat-box-header">
+                                <span class="stat-box-title">Удары за матч</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="color: var(--primary-color); font-weight: 700;">16.5</span>
+                                <span style="color: var(--secondary-color); font-weight: 700;">14.2</span>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-bar-home" style="width: 54%"></div>
+                                <div class="stat-bar-away" style="width: 46%"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-box">
+                            <div class="stat-box-header">
+                                <span class="stat-box-title">xG (ожидаемые голы)</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="color: var(--primary-color); font-weight: 700;">2.1</span>
+                                <span style="color: var(--secondary-color); font-weight: 700;">1.8</span>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-bar-home" style="width: 54%"></div>
+                                <div class="stat-bar-away" style="width: 46%"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-box">
+                            <div class="stat-box-header">
+                                <span class="stat-box-title">Голы за матч</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="color: var(--primary-color); font-weight: 700;">2.4</span>
+                                <span style="color: var(--secondary-color); font-weight: 700;">2.1</span>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-bar-home" style="width: 53%"></div>
+                                <div class="stat-bar-away" style="width: 47%"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-box">
+                            <div class="stat-box-header">
+                                <span class="stat-box-title">Пропущено за матч</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="color: var(--primary-color); font-weight: 700;">0.8</span>
+                                <span style="color: var(--secondary-color); font-weight: 700;">0.9</span>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-bar-home" style="width: 47%"></div>
+                                <div class="stat-bar-away" style="width: 53%"></div>
+                            </div>
+                        </div>
+
+                        <div class="stat-box">
+                            <div class="stat-box-header">
+                                <span class="stat-box-title">Угловые за матч</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="color: var(--primary-color); font-weight: 700;">6.8</span>
+                                <span style="color: var(--secondary-color); font-weight: 700;">5.9</span>
+                            </div>
+                            <div class="stat-bar">
+                                <div class="stat-bar-home" style="width: 54%"></div>
+                                <div class="stat-bar-away" style="width: 46%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="h2h" class="tab-content">
+                <div class="prediction-section">
+                    <h2 class="prediction-section-title">
+                        <i class="fas fa-history"></i>
+                        Личные встречи
+                    </h2>
+
+                    <div style="overflow-x: auto;">
+                        <table class="teams-table">
+                            <thead>
+                                <tr>
+                                    <th>Дата</th>
+                                    <th>Турнир</th>
+                                    <th>Дома</th>
+                                    <th>Счет</th>
+                                    <th>В гостях</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>10 Ноя 2025</td>
+                                    <td>Premier League</td>
+                                    <td>Liverpool</td>
+                                    <td style="font-weight: 800; font-size: 1.2rem;">1:1</td>
+                                    <td>Manchester City</td>
+                                </tr>
+                                <tr>
+                                    <td>01 Апр 2025</td>
+                                    <td>Premier League</td>
+                                    <td>Manchester City</td>
+                                    <td style="font-weight: 800; font-size: 1.2rem;">4:1</td>
+                                    <td>Liverpool</td>
+                                </tr>
+                                <tr>
+                                    <td>25 Дек 2024</td>
+                                    <td>Premier League</td>
+                                    <td>Liverpool</td>
+                                    <td style="font-weight: 800; font-size: 1.2rem;">1:3</td>
+                                    <td>Manchester City</td>
+                                </tr>
+                                <tr>
+                                    <td>10 Мар 2024</td>
+                                    <td>Premier League</td>
+                                    <td>Manchester City</td>
+                                    <td style="font-weight: 800; font-size: 1.2rem;">1:1</td>
+                                    <td>Liverpool</td>
+                                </tr>
+                                <tr>
+                                    <td>25 Ноя 2023</td>
+                                    <td>Premier League</td>
+                                    <td>Liverpool</td>
+                                    <td style="font-weight: 800; font-size: 1.2rem;">1:1</td>
+                                    <td>Manchester City</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px;">
+                        <div class="stat-box" style="text-align: center;">
+                            <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary-color);">3</div>
+                            <div style="color: var(--text-secondary);">Победы City</div>
+                        </div>
+                        <div class="stat-box" style="text-align: center;">
+                            <div style="font-size: 2.5rem; font-weight: 800; color: var(--text-secondary);">5</div>
+                            <div style="color: var(--text-secondary);">Ничьи</div>
+                        </div>
+                        <div class="stat-box" style="text-align: center;">
+                            <div style="font-size: 2.5rem; font-weight: 800; color: var(--secondary-color);">2</div>
+                            <div style="color: var(--text-secondary);">Победы Liverpool</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="form" class="tab-content">
+                <div class="prediction-section">
+                    <h2 class="prediction-section-title">
+                        <i class="fas fa-line-chart"></i>
+                        Форма команд
+                    </h2>
+
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+                        <div>
+                            <h3 style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/8652/8652964.png" alt="Man City" style="width: 30px;">
+                                Manchester City
+                            </h3>
+                            <div style="background: var(--bg-dark); padding: 20px; border-radius: var(--radius);">
+                                <div style="display: flex; gap: 10px; margin-bottom: 20px; justify-content: center;">
+                                    <span class="form-badge win" style="width: 40px; height: 40px; font-size: 1rem;">W</span>
+                                    <span class="form-badge win" style="width: 40px; height: 40px; font-size: 1rem;">W</span>
+                                    <span class="form-badge draw" style="width: 40px; height: 40px; font-size: 1rem;">D</span>
+                                    <span class="form-badge win" style="width: 40px; height: 40px; font-size: 1rem;">W</span>
+                                    <span class="form-badge win" style="width: 40px; height: 40px; font-size: 1rem;">W</span>
+                                </div>
+                                <table class="teams-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Дата</th>
+                                            <th>Соперник</th>
+                                            <th>Результат</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>20 Мар</td>
+                                            <td>Arsenal</td>
+                                            <td><span class="form-badge win">W 3:1</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>15 Мар</td>
+                                            <td>Chelsea</td>
+                                            <td><span class="form-badge win">W 2:0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10 Мар</td>
+                                            <td>Tottenham</td>
+                                            <td><span class="form-badge draw">D 1:1</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>05 Мар</td>
+                                            <td>Newcastle</td>
+                                            <td><span class="form-badge win">W 4:1</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>01 Мар</td>
+                                            <td>United</td>
+                                            <td><span class="form-badge win">W 3:0</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/8652/8652852.png" alt="Liverpool" style="width: 30px;">
+                                Liverpool
+                            </h3>
+                            <div style="background: var(--bg-dark); padding: 20px; border-radius: var(--radius);">
+                                <div style="display: flex; gap: 10px; margin-bottom: 20px; justify-content: center;">
+                                    <span class="form-badge win" style="width: 40px; height: 40px; font-size: 1rem;">W</span>
+                                    <span class="form-badge draw" style="width: 40px; height: 40px; font-size: 1rem;">D</span>
+                                    <span class="form-badge win" style="width: 40px; height: 40px; font-size: 1rem;">W</span>
+                                    <span class="form-badge win" style="width: 40px; height: 40px; font-size: 1rem;">W</span>
+                                    <span class="form-badge draw" style="width: 40px; height: 40px; font-size: 1rem;">D</span>
+                                </div>
+                                <table class="teams-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Дата</th>
+                                            <th>Соперник</th>
+                                            <th>Результат</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>20 Мар</td>
+                                            <td>Chelsea</td>
+                                            <td><span class="form-badge win">W 2:1</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>15 Мар</td>
+                                            <td>Arsenal</td>
+                                            <td><span class="form-badge draw">D 2:2</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10 Мар</td>
+                                            <td>West Ham</td>
+                                            <td><span class="form-badge win">W 3:0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>05 Мар</td>
+                                            <td>Brighton</td>
+                                            <td><span class="form-badge win">W 2:1</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>01 Мар</td>
+                                            <td>Tottenham</td>
+                                            <td><span class="form-badge draw">D 1:1</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-futbol"></i> FootballStats</h3>
+                    <p>Современная платформа для анализа футбольной статистики с использованием искусственного интеллекта</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="matches.html">Матчи</a></li>
+                        <li><a href="teams.html">Команды</a></li>
+                        <li><a href="predictions.html">Прогнозы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Лиги</h4>
+                    <ul>
+                        <li><a href="#">Premier League</a></li>
+                        <li><a href="#">La Liga</a></li>
+                        <li><a href="#">Serie A</a></li>
+                        <li><a href="#">Bundesliga</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@footballstats.com</li>
+                        <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FootballStats. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
